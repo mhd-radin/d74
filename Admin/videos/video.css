@@ -1,0 +1,129 @@
+body {
+  background: var(--sec-bg);
+}
+
+.card {
+  background: var(--bg);
+  border-radius: 8px;
+  margin: 0.5rem;
+  padding: 1rem 0.6rem;
+  padding-bottom: 1.2rem !important;
+  position: relative;
+}
+
+.card-date {
+  color: var(--sec-color);
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 12px;
+}
+
+.card-opt-icon {
+  position: absolute;
+  left: 10px;
+  top: 3px;
+  font-size: 20px;
+  color: var(--color)
+}
+
+.card-img,
+.card-img img {
+  width: 99%;
+  margin: 0.2rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+}
+
+.active {
+  color: var(--blue);
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    width: 280px;
+    height: max-content;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+body {
+  background: var(--sec-bg);
+}
+
+.body {
+  width: 100%;
+  min-height: 90vh;
+}
+
+/* code here */
+
+.card-options {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.7rem;
+  background: var(--bg);
+  border-radius: 8px;
+  animation: startfrombottom 0.3s 1;
+  box-shadow: 0 0 50px 4000px #33333390;
+  z-index: 999;
+  width: 70%;
+  display: none;
+}
+
+.card-head {
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 0.35rem;
+}
+
+.card-body {
+  font-size: 12px;
+  padding-top: 0.5rem;
+}
+
+.card-opt {
+  padding: 0.3rem;
+}
+
+.load23 {
+  margin-bottom: 2rem;
+}
+
+.active {
+  color: var(--blue);
+}
+
+@keyframes showInLeft {
+  0% {
+    transform: translate(-120%)
+  }
+
+  100% {
+    transform: translate(0%)
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    width: 280px;
+    height: max-content;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card-options {
+    width: 290px;
+  }
+}

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.live-board-root {
+  padding: 5px;
+  margin: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.live-board-root.mbn,
+.live-board-root.mbn *{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.live-board-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--sec-color);
+  margin-bottom: 10px;
+}
+
+.live-board-title .right-icons {
+  top: 5px;
+}
+
+.live-board-title .right-icons ion-icon {
+  font-size: 22px;
+  padding: 3px;
+  margin: 1px;
+}
+
+.live-board {
+  display: flex;flex-direction: row;
+  overflow: scroll;
+}
+
+.team-card {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 8px;
+  min-width: 300px;
+  text-align: center;
+  margin: 2px;
+  margin-right: 8px;
+}
+
+.team-thumb {
+  width: 300px;
+  position: relative;
+}
+
+.team-thumb img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.match-vs {
+  color: var(--theme-color);
+  font-family: "Rubik", "Poppins", sans-serif;
+}
+
+.team-card .match-title {
+  margin: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: "Rubik", monospace, sans-serif;
+}
+
+.team-card .match-info {
+  margin: 2px;
+  font-size: 13px;
+  font-family: "Alegreya Sans SC", monospace, sans-serif;
+}
+
+.team-card .match-info-basic {
+  margin: 2px;
+  font-size: 10px;
+  color: var(--sec-color);
+  margin-bottom: 12px;
+}
+
+.team-card .match-opt {
+  text-align: start !important;
+  padding: 4px;
+  position: relative;
+  margin: 2px;
+  margin-bottom: 4px;
+}
+
+.team-card .match-opt ion-icon {
+  font-size: 20px;
+  color: var(--theme-color);
+}
+
+
+.team-card .match-opt .right-icons {
+  top: 4px;
+}
+
+.more-card-link {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(https://media.api-sports.io/football/venues/556.png) center center;
+  backdrop-filter: blur(2px)
+}
+
+.more-view-card {
+  text-align: center;
+  background: var(--bg);
+  padding: 7px;
+  border-radius: 9px;
+}

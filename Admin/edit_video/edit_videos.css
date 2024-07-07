@@ -1,0 +1,134 @@
+body {
+  background: var(--sec-bg);
+}
+
+/*
+^kiUIe;i3rB^x).;^SMh0rDyiW~@sc})dC^JbRw9}Gass20LTo
+*/
+
+.form-center {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem;
+  border-radius: 20px;
+  min-width: 50%;
+  max-height: 60%;
+  background: #ffffff;
+  box-shadow: 0 0 10px #33333350;
+  overflow: scroll
+}
+
+.form-center img {
+  width: 55%;
+  border-radius: 8px;
+}
+
+.form-center .header {
+  text-align: center;
+  margin: 1.4rem;
+}
+
+.form {
+  margin: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  font-size: 13px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.4rem;
+  width: 90%;
+  margin: 0.4rem;
+}
+
+input:focus {
+  border: 2px solid var(--blue);
+}
+
+button {
+  font-size: 13px;
+  outline: none;
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+  padding: 0.4rem !important;
+  width: 95%;
+  width: webkit-fill-available !important;
+  margin: 0.4rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0.5rem;
+}
+
+.body {
+  width: 100%;
+  position: relative;
+  height: 90vh;
+}
+
+.content {
+  align-items: center;
+  background: var(--white);
+  margin: 0.7rem;
+  padding: 0.5rem;
+  height: 260px;
+  border-radius: 8px;
+  position: relative
+}
+
+.center-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.center-icon, .center-icon ion-icon {
+  font-size: 40px !important;
+  text-align: center;
+  margin: 0.2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .form-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem;
+    border-radius: 20px;
+    min-width: 80%;
+    overflow: scroll;
+    max-height: 90%;
+    padding-bottom: 1.4rem;
+    background: #ffffff;
+  }
+}
+
+@media screen and (min-width: 600px){
+  .content {
+    width: 300px;
+    margin: 0.5rem;
+  }
+  
+  .body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+button:focus {
+  opacity: 0.7;
+  transition: 0.5s
+}
+

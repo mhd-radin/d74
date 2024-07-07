@@ -1,0 +1,38 @@
+.acc {
+  padding: 0.4rem;
+display: flex;
+  flex-direction: row;
+  position: relative;
+  background: var(--bg);
+  color: var(--color);
+  margin: 0;
+  height: max-content;
+  margin-bottom: 2px;
+}
+
+.acc .sp {
+  margin: 0.25rem;
+  /* margin-left: 0.4rem; */
+}
+
+.sp * {
+  margin-left: 0.4rem;
+  /* background: var(--bg); */
+}
+
+.acc span {
+  /* position: absolute; */
+  right: 10px;
+}
+
+.body {
+  margin-top: 0.5rem;
+}
+
+.gr {
+  background: var(--inverted-color);
+}
+
+.name {
+  font-weight: bold;
+}

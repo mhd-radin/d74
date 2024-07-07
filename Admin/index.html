@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D74 Edits | Admin</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../logo.png">
+
+  <link rel="stylesheet" href="../view/app.css">
+  <link rel="stylesheet" href="admin.css">
+
+  <script type="text/javascript" charset="utf-8">
+    if (localStorage.getItem('admin')) {} else {
+      window.location.href = 'admin_login'
+    }
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../view/alert.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="title" animation="true">D74 Edits <b>Admin</b></div>
+    <div class="right-icons">
+      <ion-icon name="options-outline" id="menuOpener"></ion-icon>
+    </div>
+  </nav>
+
+
+  <div class="left-bar">
+    <div class="left-bar-close" id="leftBarCloser">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </div>
+    <div class="left-box" onclick="redirctTo('../explore')">
+      <div class="link">
+        <p>Explore</p>
+      </div>
+      <div class="link" onclick="redirctTo('../../settings')">
+        <p>Settings</p>
+      </div>
+      <div class="link">
+        <p>Create Post</p>
+      </div>
+      <div class="link">
+        <p>YouTube</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="content" onclick="redirctTo('themes')">
+      <div class="center-box">
+        <div class="center-icon">
+          <ion-icon name="brush-outline"></ion-icon>
+        </div>
+        <div class="center-text">
+          Themes
+        </div>
+      </div>
+    </div>
+
+    <div class="content" onclick="redirctTo('videos')">
+      <div class="center-box">
+        <div class="center-icon">
+          <ion-icon name="videocam-outline"></ion-icon>
+        </div>
+        <div class="center-text">
+          Videos
+        </div>
+      </div>
+    </div>
+
+    <div class="content" onclick="redirctTo('accounts')">
+      <div class="center-box">
+        <div class="center-icon">
+          <ion-icon name="people-outline"></ion-icon>
+        </div>
+        <div class="center-text">
+          Accounts
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--
+  <div class="block-div" style="display: block; z-index: 999"></div>
+  <div class="form-center" style="z-index: 9999">
+    <div class="header">
+      <h3>D74 Edits</h3>
+      <p class="subtitle">Get Administration</p>
+    </div>
+    <div class="form">
+      <input type="email" placeholder="Username" id="username">
+      <input type="password" placeholder="Password" id="password">
+      <button id="submit" onclick="">Confirm</button>
+    </div>
+  </div>
+  -->
+  
+  <script>heading = "D74 Edits <b>Admin</b>"</script>
+  <script src="../view/app.js"></script>
+  <script src="../admin_main.js"></script>
+</body>
+
+</html>

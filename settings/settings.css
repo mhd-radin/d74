@@ -1,0 +1,25 @@
+.body {
+  margin: 0.5rem;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--color)
+}
+
+.proper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 0.8rem 0.5rem;
+}
+
+.proper .right {
+  position: absolute;
+  right: 10px;
+}

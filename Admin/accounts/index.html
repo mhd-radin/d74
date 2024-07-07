@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>d74 Edits | Accounts </title>
+  <link rel="shortcut icon" type="image/x-icon" href="../../logo.png">
+
+  <link rel="stylesheet" href="../../view/app.css">
+  <link rel="stylesheet" href="accounts.css">
+
+  <script type="text/javascript" charset="utf-8">
+    if (localStorage.getItem('admin')) {} else {
+      window.location.href = '../admin_login'
+    }
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../../view/alert.js"></script>
+
+</head>
+
+<body>
+  <nav>
+    <div class="title" animation="true">D74 Edits <b>Accounts</b></div>
+    <div class="right-icons">
+      <ion-icon name="ban-outline"></ion-icon>
+      <ion-icon name="options-outline" id="menuOpener"></ion-icon>
+    </div>
+  </nav>
+
+  <div class="left-bar">
+    <div class="left-bar-close" id="leftBarCloser">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </div>
+    <div class="left-box" onclick="redirctTo('../../explore')">
+      <div class="link">
+        <p>Explore</p>
+      </div>
+      <div class="link" onclick="redirctTo('../../settings')">
+        <p>Settings</p>
+      </div>
+      <div class="link">
+        <p>Create Post</p>
+      </div>
+      <div class="link">
+        <p>YouTube</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+  </div>
+
+  <script>heading = "D74 Edits <b>Accounts</b>"</script>
+  <script>nowUrl = '../'</script>
+  <script src="../../view/app.js">
+    nowUrl = '../'
+  </script>
+  <script src="../../view/d74.js"></script>
+  <script src="accounts.js"></script>
+</body>
+
+</html>

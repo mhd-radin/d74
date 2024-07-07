@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>d74 Edits | Admin Login</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../../logo.png">
+  
+  <link rel="stylesheet" href="../../view/app.css">
+  <link rel="stylesheet" href="../admin.css">
+ 
+   <script type="text/javascript" charset="utf-8">
+    if (localStorage.getItem('admin')) {
+      window.location.href = '../'
+    }
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../../view/alert.js"></script>
+
+</head>
+
+<body>
+  <div class="block-div" style="display: block; z-index: 999999"></div>
+  <div class="form-center" style="z-index: 9999999">
+    <div class="header">
+      <h3>D74 Edits</h3>
+      <p class="subtitle">Get Administration</p>
+    </div>
+    <div class="form">
+      <input type="email" placeholder="Username" id="username">
+      <input type="password" placeholder="Password" id="password">
+      <button id="submit" onclick="">Confirm</button>
+    </div>
+  </div>
+
+  
+  <script src="../../view/d74.js"></script>
+  <script src="../../view/app.js"></script>
+  <script src="../admin.js"></script>
+</body>
+
+</html>

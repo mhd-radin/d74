@@ -8,8 +8,11 @@ if (nowUrl) {
 const themes = [
     'light',
     'blue',
-    'dark'
-    ]
+    'dark']
+    
+function setThemeColor(color) {
+  document.body.style = '--theme-color: '+color
+}
 
 function setTheme(theme) {
   var body = document.body;
@@ -31,6 +34,12 @@ if (localStorage.getItem('theme')) {
   var value = localStorage.getItem('theme')
   
   setTheme(value)
+}
+
+if (localStorage.getItem('theme-color')) {
+  var value = localStorage.getItem('theme-color')
+  
+  setThemeColor(value)
 }
 
 function hErr(e) {

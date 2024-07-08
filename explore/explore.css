@@ -97,7 +97,7 @@ body {
 }
 
 .active {
-  color: var(--blue);
+  color: var(--theme-color);
 }
 
 @keyframes showInLeft {

@@ -22,4 +22,10 @@ select {
 .proper .right {
   position: absolute;
   right: 10px;
+  text-align: end;
 }
+
+h3 {
+  font-family: "Rubik", "Rubik", "Poppins", sans-serif;
+}
+

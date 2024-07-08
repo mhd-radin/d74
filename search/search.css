@@ -43,7 +43,7 @@ nav input {
   outline: none;
   border-radius: 20px;
   min-width: 100px;
-  background: var(--blue);
+  background: var(--theme-color);
   font-size: 13px;
   padding: 0.4rem 0.8rem;
   color: var(--white);
@@ -88,7 +88,7 @@ nav input {
 }
 
 .active {
-  color: var(--blue);
+  color: var(--theme-color);
 }
 
 .null-search {

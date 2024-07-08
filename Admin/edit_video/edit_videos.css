@@ -49,15 +49,15 @@ input {
 }
 
 input:focus {
-  border: 2px solid var(--blue);
+  border: 2px solid var(--theme-color);
 }
 
 button {
   font-size: 13px;
   outline: none;
-  background: var(--blue);
+  background: var(--theme-color);
   color: #fff;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--theme-color);
   border-radius: 5px;
   padding: 0.4rem !important;
   width: 95%;

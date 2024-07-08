@@ -109,7 +109,7 @@ img {
   width: 55px;
   height: 55px;
   animation: spin 2s infinite;
-  border: 3px solid var(--blue);
+  border: 3px solid var(--theme-color);
   border-radius: 50%;
   border-top: 3px solid transparent;
 }

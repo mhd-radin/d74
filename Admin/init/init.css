@@ -20,7 +20,7 @@ progress {
 }
 
 ::-webkit-progress-value {
-  background: var(--blue);
+  background: var(--theme-color);
   border-radius: 2px;
 }
 

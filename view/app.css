@@ -36,7 +36,7 @@ body {
   width: 55px;
   height: 55px;
   animation: spin 2s infinite;
-  border: 3px solid var(--blue);
+  border: 3px solid var(--theme-color);
   border-radius: 50%;
   border-top: 3px solid transparent;
 }
@@ -55,8 +55,8 @@ ion-icon {
   padding: 0.3rem 0.8rem;
   margin: 5%;
   margin-top: 0rem;
-  border: 1px solid var(--blue);
-  color: var(--blue);
+  border: 1px solid var(--theme-color);
+  color: var(--theme-color);
   background: transparent;
   border-radius: 8px;
   width: 90%;
@@ -92,7 +92,7 @@ ion-icon {
 .main-preload {
   width: 75px;
   height: 75px;
-  border: 3px solid var(--blue);
+  border: 3px solid var(--theme-color);
   border-radius: 50%;
   border-top: 3px solid var(--bg);
   animation: spin 2s infinite;
@@ -115,7 +115,7 @@ p {
 
 a {
   text-decoration: none;
-  color: var(--blue)
+  color: var(--theme-color)
 }
 
 .loadtitle {
@@ -124,7 +124,7 @@ a {
 }
 
 .active {
-  color: var(--blue);
+  color: var(--theme-color);
 }
 
 .menu {
@@ -234,7 +234,7 @@ nav b {
 }
 
 .link:hover, .relink:hover {
-  color: var(--blue)
+  color: var(--theme-color)
 }
 
 .left-box {
@@ -356,12 +356,12 @@ button {
 }
 
 .load23 button:hover {
-  background: var(--blue);
+  background: var(--theme-color);
   color: #fff;
 }
 
 ion-icon:hover {
-  color: var(--blue)
+  color: var(--theme-color)
 }
 
 .form-center {

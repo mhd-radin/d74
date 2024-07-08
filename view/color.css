@@ -16,7 +16,6 @@
   --color: #fff;
   --blue: #5A78CB;
   --bg: #1C2157;
-  --theme-color: #4A6AA4;
   --sec-color: #eee;
   --inverted-color: #111;
   --white: #fff;
@@ -33,6 +32,6 @@
   --inverted-color: #111;
   --white: #fff;
   --black: #000;
-  --sec-bg: #555555;
-  --theme-color: #29307E;
+  --sec-bg: #2B2B2B;
+  --theme-color: #34A276;
 }

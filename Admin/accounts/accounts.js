@@ -14,8 +14,14 @@ db.get('account', function(xhr) {
       <ion-icon name="person-outline"></ion-icon>
       <div class="sp">
       <div class="name">${acc.name}</div>
-      <p>email: ${acc.email}</p>
-      <p>device: ${(acc.device ? acc.device : 'no information about device')}</p>
+      <p><strong>Email:</strong> ${acc.email}</p>
+      <p><strong>Device:</strong> ${(acc.device ? acc.device : 'no information about device')}</p>
+      <p><strong>Location:</strong> ${(acc.location ? acc.location : 'location not saved')}</p>
+      <p><strong>Id:</strong> ${(acc._id)}</p>
+      <p><strong>Date:</strong> ${(acc.date ? acc.date : 'no about date')}</p>
+      <p><strong>Languages:</strong> ${(acc.languages ? acc.languages : 'no information about languages')}</p>
+      <p><strong>Platform:</strong> ${(acc.platform ? acc.platform : 'no information about platform or OS')}</p>
+      <p><strong>Brands & Version ( JSON ):</strong> ${(acc.brandsAndVersion ? acc.brandsAndVersion : 'no information about brands and version')}</p>
       <span>unsubscriber</span>
       </div>
     </div>`

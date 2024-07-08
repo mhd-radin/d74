@@ -225,17 +225,28 @@ if (localStorage.getItem('user')) {
   var name = 'guest' + Math.floor(Math.random() * 9999)
 
   var deviceName = navigator.userAgent;
+  
   var user = {
     name: name,
     email: name + '@gmail.com',
-    device: deviceName
+    device: deviceName,
+    location: window.location.href,
+    date: new Date(),
+    languages: navigator.languages.join(','),
+    platform: navigator.userAgentData.platform,
+    brandsAndVersion: JSON.stringify(navigator.userAgentData.brands)
   }
 
 
   db.push('account', JSON.stringify({
     name: user.name,
     email: user.email,
-    device: deviceName
+    device: deviceName,
+    location: window.location.href,
+    date: user.date,
+    languages: user.languages,
+    platform: user.platform,
+    brandsAndVersion: user.brandsAndVersion
   }))
 
   localStorage.setItem('user', JSON.stringify(user))

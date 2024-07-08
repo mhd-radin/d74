@@ -5,57 +5,32 @@ if (nowUrl) {
   nowUrl = ''
 }
 
+const themes = [
+    'light',
+    'blue',
+    'dark'
+    ]
+
+function setTheme(theme) {
+  var body = document.body;
+  var is = false;
+  themes.map(function(thm) {
+    if (body.className.includes(thm)) {
+      body.className = body.className.replace(thm, theme);
+      is = true
+    }
+  })
+
+  if (!is) {
+    body.className += theme
+  }
+}
+
+
 if (localStorage.getItem('theme')) {
   var value = localStorage.getItem('theme')
-
-  var style = document.createElement('style')
-
-  if (value == 'light') {
-    style.innerHTML = `
-      :root {
-    --color: #111;
-    --blue: #5A78CB;
-    --bg: #fff;
-    --sec-color: #333;
-    --inverted-color: #fff;
-    --white: #fff;
-    --black: #000;
-    --sec-bg: #EEE;
-    --theme-color: #4A6AA4;
-  }
-      `
-  } else if (value == 'dark') {
-    style.innerHTML = `
-  :root {
-    --color: #fff;
-    --blue: #5A78CB;
-    --bg: #222;
-    --sec-color: #aaa;
-    --inverted-color: #111;
-    --white: #fff;
-    --black: #000;
-    --sec-bg: #333;
-      --theme-color: #4A6AA4;
-  }
-        `
-  } else if (value == 'blue') {
-    style.innerHTML = `
-     :root {
-    --color: #fff;
-    --blue: #5A78CB;
-    --bg: #1C2157;
-    --sec-color: #eee;
-    --inverted-color: #111;
-    --white: #fff;
-    --black: #000;
-    --sec-bg: #29307E;
-      --theme-color: #4A6AA4;
-
-  }
-      `
-  }
-
-  document.head.appendChild(style)
+  
+  setTheme(value)
 }
 
 function hErr(e) {
@@ -225,7 +200,7 @@ if (localStorage.getItem('user')) {
   var name = 'guest' + Math.floor(Math.random() * 9999)
 
   var deviceName = navigator.userAgent;
-  
+
   var user = {
     name: name,
     email: name + '@gmail.com',
@@ -327,3 +302,11 @@ function coolLoop(arr, callback, index = 0, time = 10) {
     }
   })
 }
+
+/*
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('../../sw.js', {
+      // scope: window.location.origin
+    })
+    .then(registration => {})
+}*/

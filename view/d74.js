@@ -82,23 +82,22 @@ const db = {
 
     xhr.send(data);
   },
-  getLiveAndHL(callback){
+  getLiveAndHL(callback) {
     const data = null;
-    
+
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
-    
+
     xhr.addEventListener('readystatechange', function() {
       if (this.readyState === this.DONE) {
         if (typeof callback == 'function') callback(xhr)
       }
     });
-    
+
     xhr.open('GET', 'https://free-football-soccer-videos.p.rapidapi.com');
     xhr.setRequestHeader('x-rapidapi-key', '786ab693aamsh13b490be165befdp1ebb1bjsn20906d36a500');
     xhr.setRequestHeader('x-rapidapi-host', 'free-football-soccer-videos.p.rapidapi.com');
-    
+
     xhr.send(data);
   }
 }
-

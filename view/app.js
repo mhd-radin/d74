@@ -8,7 +8,9 @@ if (nowUrl) {
 const themes = [
     'light',
     'blue',
-    'dark']
+    'dark',
+    'green',
+    'black']
     
 function setThemeColor(color) {
   document.body.style = '--theme-color: '+color

@@ -7,4 +7,6 @@
 - desktop ui bug fixes 
 
 ### 0C 
-- 
+- search page structure formated
+- admin accounts structure formated
+- admin videos structure formated and code shorted

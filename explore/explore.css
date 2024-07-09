@@ -142,6 +142,7 @@ body {
   margin: 5px;
   margin-bottom: 20px;
   position: relative;
+  width: calc(100% - 23px);
 }
 
 .card-board-root.mbn,
@@ -170,5 +171,7 @@ body {
 .card-board {
   display: flex;flex-direction: row;
   overflow: scroll;
-  width: 95%;
+  max-width: (100% - 5px);
+  width: (100% - 5px) !important;
 }
+

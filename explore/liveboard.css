@@ -8,7 +8,7 @@
 }
 
 .live-board-root.mbn,
-.live-board-root.mbn *{
+.live-board-root.mbn * {
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -31,8 +31,11 @@
 }
 
 .live-board {
-  display: flex;flex-direction: row;
+  display: flex;
+  flex-direction: row;
   overflow: scroll;
+  max-width: 95%;
+  width: 95%;
 }
 
 .team-card {

@@ -5,6 +5,7 @@ body {
 .body {
   width: 100%;
   min-height: 90vh;
+  overflow: hidden;
 }
 
 .card {
@@ -169,4 +170,5 @@ body {
 .card-board {
   display: flex;flex-direction: row;
   overflow: scroll;
+  width: 95%;
 }

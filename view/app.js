@@ -314,6 +314,11 @@ function coolLoop(arr, callback, index = 0, time = 10) {
   })
 }
 
+if ('dayjs' in window || window.dayjs){
+if (dayjs && window.dayjs_plugin_relativeTime){
+  dayjs.extend(window.dayjs_plugin_relativeTime);
+}
+}
 /*
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('../../sw.js', {

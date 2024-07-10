@@ -10,3 +10,7 @@
 - search page structure formated
 - admin accounts structure formated
 - admin videos structure formated and code shorted
+
+### 0D
+- created ad testing page
+- added meta tag for google verification

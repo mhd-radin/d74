@@ -44,6 +44,9 @@
   background: var(--sec-bg);
   padding-left: 8px;
   margin-bottom: 1px;
+  -webkit-animation: popup_playbox 0.3s 1;
+  -o-animation: popup_playbox 0.3s 1;
+  animation: popup_playbox 0.3s 1;
 }
 
 .playbox ion-icon {
@@ -64,4 +67,15 @@
 .playbox.active {
   background: var(--theme-color);
   color: var(--color);
+}
+
+@keyframes popup_playbox {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

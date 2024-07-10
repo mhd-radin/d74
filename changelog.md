@@ -33,3 +33,8 @@
 ### 0H
 - created new file `blank.html` on `livehelper`
 - changed url of stream iframe
+
+### 0I
+- changed font in `blank.html`
+- bug fixes ( d74.js added )
+- animations added

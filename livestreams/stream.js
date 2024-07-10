@@ -17,14 +17,21 @@ const playboxUI = {
         </div>
       </div>`)
   },
-  select(id) {
+  select(id, title2 = false, tag = false) {
     playboxUI.currentId = id;
     var div = document.getElementById(id);
+    if (tag){
+      div = document.createElement('div')
+    }
     document.querySelectorAll('.playbox').forEach(function(elem) {
       elem.className = 'playbox'
     })
     div.className = 'playbox active';
-    title.innerHTML = this.toName(id);
+    if (title2) {
+      title.innerHTML = title2;
+    } else {
+      title.innerHTML = this.toName(id)
+    };
     frame.src = '../livehelper/player.html?id=' + id;
   }
 }
@@ -35,17 +42,21 @@ if (params == '') {} else {
   var objectParams = JSON.parse(paramsString);
   objectParams = objectParams
   if (objectParams.id == undefined) {
-    
+
   } else {
-    playboxUI.currentId = objectParams.id;
-    if (objectParams.title) title.innerHTML = objectParams.title;
+    var title2 = false;
+    var id = objectParams.id;
+    if (objectParams.title) title2 = decodeURI(objectParams.title);
+    playboxUI.select(id, title2, true)
   }
 }
 
 document.getElementById('list').innerHTML = ''
-Object.keys(CH_API).map((id, i) => {
-  document.getElementById('list').innerHTML += playboxUI.create(id);
-  if (i === 0 && !playboxUI.currentId) {
-    playboxUI.select(id)
-  }
-})
+
+coolLoop(
+  Object.keys(CH_API), (id, i) => {
+    document.getElementById('list').appendChild(playboxUI.create(id).parseElement()[0]);
+    if (i === 0 && !playboxUI.currentId && playboxUI.currentId == null) {
+      playboxUI.select(id)
+    }
+  }, 0, 60)

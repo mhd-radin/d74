@@ -14,3 +14,6 @@
 ### 0D
 - created ad testing page
 - added meta tag for google verification
+
+### 0E 
+- live player added

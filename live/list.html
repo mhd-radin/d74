@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <select name="" id="list">
+  </select>
+  <iframe src="player.html?id=FORMULA_1" frameborder="0"></iframe>
+  <script src="api.js"></script>
+  <script>
+    console.log(CH_API);
+    var lister = document.getElementById('list');
+    Object.keys(CH_API).map((value)=>{
+      lister.innerHTML += '<option value="'+value+'">'+value+'</option>'
+    })
+    
+    lister.onchange = function (){
+      document.querySelector('iframe').src = 'player.html?id='+lister.value;
+    }
+  </script>
+</body>
+
+</html>

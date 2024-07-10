@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+.body {
+  width: 100%;
+  overflow: hidden;
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.player-box {
+  background: var(--bg);
+  padding: 10px;
+  margin: 13px;
+  border-radius: 9px;
+  position: relative;
+  max-width: calc(100% - 20px);
+}
+
+.player-box iframe {
+  width: 100%;
+  border-radius: 9px;
+  border: 2px solid var(--theme-color);
+}
+
+.list-channels {
+  background: var(--bg);
+  padding: 10px;
+  margin: 13px;
+  border-radius: 9px;
+  margin-bottom: 100px;
+}
+
+.playbox {
+  display: flex;flex-direction:row;
+  position: relative;
+  font-family: "Rubik", "Alegreya Sans SC", "Poppins", sans-serif;
+  padding: 5px;
+  background: var(--sec-bg);
+  padding-left: 8px;
+  margin-bottom: 1px;
+}
+
+.playbox ion-icon {
+  font-size: 18px;
+}
+
+.playbox:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.playbox:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+.playbox.active {
+  background: var(--theme-color);
+  color: var(--color);
+}

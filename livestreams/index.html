@@ -4,14 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>D74 Edits | Search</title>
+  <title>D74 Edits | Live Streamings</title>
+
   <link rel="shortcut icon" type="image/x-icon" href="../logo.png">
 
   <link rel="stylesheet" href="../view/app.css">
-  <link rel="stylesheet" href="search.css">
-
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+  <link rel="stylesheet" href="style.stream.css">
   <script src="../view/alert.js"></script>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -20,11 +18,9 @@
 
 <body>
   <nav>
-    <!--div class="title" animation="true">D74 Edits</div -->
-    <input type="text" id="searcher" placeholder="Search...">
+    <div class="title" animation="true">D74 Edits <b>Live TV Channels</b></div>
     <div class="right-icons">
-      <ion-icon name="menu-outline" id="menuOpener"></ion-icon>
-      <ion-icon name="search-outline"></ion-icon>
+      <ion-icon name="options-outline" id="menuOpener"></ion-icon>
     </div>
   </nav>
 
@@ -32,7 +28,7 @@
     <div class="left-bar-close" id="leftBarCloser">
       <ion-icon name="close-circle-outline"></ion-icon>
     </div>
-    <div class="left-box" onclick="redirctTo('../explore')">
+    <div class="left-box">
       <div class="link">
         <ion-icon name="home-outline"></ion-icon>
         <div>
@@ -71,37 +67,39 @@
     </div>
   </div>
 
-  <div class="body"></div>
-
-  <div class="null-search">
-    <img src="undraw_uploading_re_okvh.svg" alt="">
-  </div>
-
-  <div class="loader-bg">
-    <div class="loader">
+  <div class="body">
+    <div class="player-box">
+      <iframe src="../visit/image.png" frameborder="0" class="player" id="frame"></iframe>
+      <p id="title">Loading...</p>
+    </div>
+    <div class="list-channels" id="list">
+      <div class="playbox">
+        <div class="playbox-text">Loading...</div>
+        <div class="right-icons">
+          <ion-icon name="horizontal-dots-outline"></ion-icon>
+        </div>
+      </div>
     </div>
   </div>
-
 
   <div class="menu">
     <div class="menu-icon">
-      <ion-icon name="home-outline" class="" onclick="redirctTo('../explore')"></ion-icon>
+      <ion-icon name="home-outline" onclick="redirctTo('../explore')"></ion-icon>
     </div>
     <div class="menu-icon">
-      <ion-icon name="search" class="active"></ion-icon>
+      <ion-icon name="search-outline" class="" onclick="redirctTo('../search')"></ion-icon>
     </div>
     <div class="menu-icon">
-      <ion-icon name="tv-outline" class="" onclick="redirctTo('../livestreams')"></ion-icon>
+      <ion-icon name="tv" class="active"></ion-icon>
     </div>
     <div class="menu-icon">
       <ion-icon name="cog-outline" class="" onclick="redirctTo('../settings')"></ion-icon>
     </div>
   </div>
 
-  <script src="../view/d74.js"></script>
   <script src="../view/app.js"></script>
-  <script src="card.structure.js"></script>
-  <script src="search.js"></script>
+  <script src="../livehelper/api.js" type="text/javascript" charset="utf-8"></script>
+  <script src="stream.js"></script>
 </body>
 
 </html>

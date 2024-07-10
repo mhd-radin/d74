@@ -22,3 +22,10 @@
 - changed theme color blue
 - replaced icons to tv icon in menu box ( footer )
 - and linked live page
+
+### 0G
+- renamed folder `live` to `livehelper`
+- created new page for live streams
+- and linked live streaming page
+- explore page title changed
+- live streams page basic completed

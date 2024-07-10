@@ -29,3 +29,7 @@
 - and linked live streaming page
 - explore page title changed
 - live streams page basic completed
+
+### 0H
+- created new file `blank.html` on `livehelper`
+- changed url of stream iframe

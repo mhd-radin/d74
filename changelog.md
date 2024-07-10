@@ -17,3 +17,8 @@
 
 ### 0E 
 - live player added
+
+### 0F
+- changed theme color blue
+- replaced icons to tv icon in menu box ( footer )
+- and linked live page

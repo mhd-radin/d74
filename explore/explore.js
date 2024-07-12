@@ -25,10 +25,10 @@ db.getLiveAndHL(function(xhr = new XMLHttpRequest()) {
 
 
     coolLoop(rs.slice(0, 12), function(data, index) {
-      var code = live_card_ui.create(data)
-      div.innerHTML += code;
+      var code = live_card_ui.create(data).parseElement()[0];
+      streams.appendChild(code);
     }, 0, 30).then(() => {
-      div.innerHTML += live_card_ui.createViewMoreCard()
+      div.appendChild(live_card_ui.createViewMoreCard().parseElement()[0])
 
       var ts = res;
       var lives = []
@@ -43,45 +43,66 @@ db.getLiveAndHL(function(xhr = new XMLHttpRequest()) {
 
 
       coolLoop(res, function(data, index) {
-        var code = live_card_ui.create(data);
+        var code = live_card_ui.create(data).parseElement()[0];
 
-        streams.innerHTML += code;
+        streams.appendChild(code);
       }, 0, 70).then(() => {
 
-        streams.innerHTML += live_card_ui.createViewMoreCard()
+        div.appendChild(live_card_ui.createViewMoreCard().parseElement()[0])
       })
-      
-      reloadVD()
+
     })
   }
 
+})
 
+function reloadApiVideo(pageTkn = pageTkn, then) {
+  db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
+    var res = JSON.parse(xhr.response);
+    if (typeof then === 'function') then(res)
+  }, pageTkn)
+}
 
+reloadApiVideo(false, function(res) {
+  addVideosCardUi(res, document.querySelector('#clipsbox'))
+  if (res.nextPageToken) {
+    reloadApiVideo(res.nextPageToken, function(res) {
+      addVideosCardUi(res, document.querySelector('#explorebox'), true)
+    })
+  }
 })
 
 
-function reloadVD() {
-  db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
-    var res = JSON.parse(xhr.response)
+reloadApiVideo(false, function (res) {
+  addVideosCardUi(res, document.querySelector('.body'), true)
+})
 
 
-    if (document.querySelector('.loader-bg')) {
-      document.querySelector('.loader-bg').style.display = 'none'
+function addVideosCardUi(res, rootelem, loadbtn = false) {
+
+  if (document.querySelector('.loader-bg')) {
+    document.querySelector('.loader-bg').style.display = 'none'
+  }
+
+  res.items.forEach(function(data, index) {
+    var id = 'ID_10' + index
+    var code = d74_structure.create(data, id)
+
+    rootelem.appendChild(code.parseElement()[0])
+  })
+
+  if (res.nextPageToken) {
+    pageTkn = res.nextPageToken
+    if (loadbtn) {
+      rootelem.innerHTML += '<button id="q43" class="load-btn" >Load More</button>'
+      document.getElementById('q43').onclick = function() {
+        reloadApiVideo(pageTkn, function(res2) {
+          addVideosCardUi(res2, rootelem, loadbtn);
+          document.getElementById('q43').remove();
+        })
+      }
     }
-
-    res.items.forEach(function(data, index) {
-      var id = 'ID_10' + index
-      var code = d74_structure.create(data, id)
-
-      document.querySelector('.body').innerHTML += code
-    })
-
-    if (res.nextPageToken) {
-      pageTkn = res.nextPageToken
-
-      document.querySelector('.load23').innerHTML += '<button id="q43" class="load-btn" onclick="document.getElementById(\'q43\').remove();reloadVD()">Load More</button>'
-    }
-  }, pageTkn)
+  }
 }
 
 //reloadVD()

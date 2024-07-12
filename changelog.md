@@ -38,3 +38,14 @@
 - changed font in `blank.html`
 - bug fixes ( d74.js added )
 - animations added
+
+### 0J ( Major Update )
+- in d74, decreased youtube video api max limitations
+- created new css file for explore page animations
+- increased z-index of nav bar and left box
+- in settings page, changed font of heading
+- ui bug fixes
+- explore page d74's cards structure changed / updated 
+- row and column view in explore page
+- coolLoop bug fixes
+- formated methods in `explore.js`

@@ -119,3 +119,8 @@
   padding: 7px;
   border-radius: 9px;
 }
+
+.live-board-title, .card-board-title {
+  font-family: "Alegreya Sans SC", "Rubik", "Poppins", sans-serif;
+  font-weight: bolder
+}

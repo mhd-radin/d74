@@ -1,0 +1,58 @@
+.team-card, .card {
+  animation: cardPopup 300ms 1;
+}
+
+nav .title {
+  -webkit-animation: slidefromleft 300ms 1;
+  -o-animation: slidefromleft 300ms 1;
+  animation: slidefromleft 300ms 1;
+  animation-delay: 300ms;
+}
+
+@keyframes cardPopup {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1.0;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideup {
+  0% {
+    opacity: 0.4;
+    transform: (0%, 100%)
+  }
+
+  100% {
+    opacity: 1.0;
+    transform: (0, 0);
+  }
+}
+
+@keyframes slidefromleft {
+  0% {
+    opacity: 0.4;
+    transform: (-100%, 0%)
+  }
+
+  100% {
+    opacity: 1.0;
+    transform: (0, 0);
+  }
+}
+
+@keyframes slidefromtop {
+  0% {
+    opacity: 0.4;
+    transform: (0%, -100%)
+  }
+
+  100% {
+    opacity: 1.0;
+    transform: (0, 0);
+  }
+}

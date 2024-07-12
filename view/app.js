@@ -305,7 +305,7 @@ function coolLoop(arr, callback, index = 0, time = 10) {
     if (arr.length > 0) {
       callback(arr[index], index);
       index += 1;
-      if (arr[index]) {
+      if (arr[index] != undefined) {
         setTimeout(function() { coolLoop(arr, callback, index, time).then(res) }, time);
       } else {
         res()

@@ -12,10 +12,11 @@ body {
   background: var(--bg);
   border-radius: 15px;
   margin: 0.8rem;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   padding: 0;
   padding-bottom: 1.2rem !important;
   position: relative;
+  min-width: 350px;
 }
 
 .sec-card {
@@ -34,6 +35,13 @@ body {
   font-size: 15px;
   border-radius: 15px;
   padding: 3px;
+}
+
+.card-title-bottom {
+  position: absolute;
+  bottom: 8px;
+  left: 4px;
+  z-index: 99;
 }
 
 .card-title small {
@@ -60,11 +68,24 @@ body {
 
 .card-img,
 .card-img img {
-  width: 99%;
+  width: calc(100% - 5px);
   margin: 0.2rem;
-  margin-top: 0.5rem;
+  margin-top: 0.1rem;
   border-radius: 15px;
-  margin-left: 2px;
+  margin-left: 2.5px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  border-radius: 15px;
+  height: 70%;
+  z-index: 9;
+  background: linear-gradient(to top, var(--bg) 45%, transparent);
 }
 
 .card-options {
@@ -99,6 +120,10 @@ body {
 
 .active {
   color: var(--theme-color);
+}
+
+.load-btn {
+  min-width: 200px;
 }
 
 @keyframes showInLeft {
@@ -146,7 +171,7 @@ body {
 }
 
 .card-board-root.mbn,
-.card-board-root.mbn *{
+.card-board-root.mbn * {
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -169,9 +194,9 @@ body {
 }
 
 .card-board {
-  display: flex;flex-direction: row;
+  display: flex;
+  flex-direction: row;
   overflow: scroll;
   max-width: (100% - 5px);
   width: (100% - 5px) !important;
 }
-

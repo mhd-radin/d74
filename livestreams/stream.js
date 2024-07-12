@@ -48,6 +48,7 @@ if (params == '') {} else {
     var id = objectParams.id;
     if (objectParams.title) title2 = decodeURI(objectParams.title);
     playboxUI.select(id, title2, true)
+    
   }
 }
 

@@ -15,7 +15,7 @@ db.getLiveAndHL(function(xhr = new XMLHttpRequest()) {
   const div = document.querySelector('#matchtoday');
   div.innerHTML = '';
 
-  const streams = document.getElementById('streams')
+  // const streams = document.getElementById('streams')
 
   if (res && Array.isArray(res)) {
     var rs = res;
@@ -30,25 +30,25 @@ db.getLiveAndHL(function(xhr = new XMLHttpRequest()) {
     }, 0, 30).then(() => {
       div.appendChild(live_card_ui.createViewMoreCard().parseElement()[0])
 
-      var ts = res;
-      var lives = []
+      // var ts = res;
+      // var lives = []
 
-      ts.map((v, i, a) => {
-        v.videos.map((vd) => {
-          if (vd.title === 'Live Stream') {
-            lives.push(v)
-          }
-        })
-      })
+      // ts.map((v, i, a) => {
+      //   v.videos.map((vd) => {
+      //     if (vd.title === 'Live Stream') {
+      //       lives.push(v)
+      //     }
+      //   })
+      // })
 
-      coolLoop(res.slice(15, 40).reverse(), function(data, index) {
-        var code = live_card_ui.create(data).parseElement()[0];
+      // coolLoop(res.slice(15, 40).reverse(), function(data, index) {
+      //   var code = live_card_ui.create(data).parseElement()[0];
 
-        streams.appendChild(code);
-      }, 0, 70).then(() => {
+      //   streams.appendChild(code);
+      // }, 0, 70).then(() => {
 
-        streams.appendChild(live_card_ui.createViewMoreCard().parseElement()[0])
-      })
+      //   streams.appendChild(live_card_ui.createViewMoreCard().parseElement()[0])
+      // })
 
     })
   }

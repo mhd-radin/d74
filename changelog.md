@@ -60,3 +60,7 @@
 - sharable live streamings urls
 - styling bug fixes 
 - settings page updated
+
+### 0M
+- Added new tv live cards on explore page
+- explore page basic completed

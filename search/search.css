@@ -103,6 +103,32 @@ nav input {
   height: 90vh;
 }
 
+.body .works {
+  padding: 8px;
+}
+
+.body h3 {
+  font-family: "Alegreya Sans SC", "Poppins", sans-serif;
+  margin: 6px;
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+.body .tags {
+  display: flex;flex-direction: row;
+  overflow: scroll;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.tag {
+  margin: 3px;
+  padding: 5px 10px;
+  border: 2px solid var(--theme-color);
+  border-radius: 17px;
+  
+}
+
 @media screen and (min-width: 600px) {
   .card {
     width: 280px;
@@ -128,3 +154,4 @@ nav input {
     left: 55%;
   }
 }
+

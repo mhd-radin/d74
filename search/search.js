@@ -1,3 +1,5 @@
+var bodyData = document.querySelector('.body').innerHTML;
+
 function searchVideos(search = false, inScript = function() {}) {
   document.querySelector('.loader-bg').style.display = 'block'
   db.get('videos?h=' + decodeURI(JSON.stringify({})), function(xhr = new XMLHttpRequest()) {
@@ -31,13 +33,14 @@ function searchVideos(search = false, inScript = function() {}) {
 
     document.getElementById('searcher').onchange = function(e) {
       if (document.getElementById('searcher').value == false || document.getElementById('searcher').value == '') {
-        document.querySelector('.null-search').style.display = 'block'
+        //document.querySelector('.null-search').style.display = 'block'
+                document.querySelector('.body').innerHTML = bodyData
       } else {
-        document.querySelector('.null-search').style.display = 'none'
+        //document.querySelector('.null-search').style.display = 'none'
       }
 
       if (document.getElementById('searcher').value == false || document.getElementById('searcher').value.replaceAll(' ', '') == '' || document.getElementById('searcher').value == 'null') {
-        document.querySelector('.body').innerHTML = ''
+        //document.querySelector('.body').innerHTML = ''
       } else {
         srchVd(document.getElementById('searcher').value)
       }

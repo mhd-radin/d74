@@ -64,3 +64,6 @@
 ### 0M
 - Added new tv live cards on explore page
 - explore page basic completed
+
+### 0N
+- at search page, added helper tags ( trending searchs )

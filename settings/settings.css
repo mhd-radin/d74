@@ -1,5 +1,7 @@
 .body {
   margin: 0.5rem;
+  max-height: calc(100vh - 100px);
+  overflow: scroll;
 }
 
 select {
@@ -26,6 +28,8 @@ select {
 }
 
 h3 {
+  margin-top: 20px !important;
+  margin-bottom: 8px !important;
   font-family: "Alegreya Sans SC", "Rubik", "Poppins", sans-serif;
 }
 

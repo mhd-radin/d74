@@ -3,6 +3,9 @@ var frame = document.getElementById('frame')
 
 const playboxUI = {
   currentId: null,
+  useLink(id){
+    window.location.search = '?id='+id;
+  },
   toName(id) {
     var name = id.replaceAll('_', ' ');
     return name
@@ -10,7 +13,7 @@ const playboxUI = {
   create(id) {
     var name = this.toName(id)
 
-    return new TagString(`<div class="playbox" id="${id}" onclick="playboxUI.select('${id}')">
+    return new TagString(`<div class="playbox" id="${id}" onclick="playboxUI.useLink('${id}')">
         <div class="playbox-text">${name}</div>
         <div class="right-icons">
           <ion-icon name="play-circle-outline"></ion-icon>

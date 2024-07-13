@@ -70,6 +70,7 @@
 
   <div class="body">
     <h3>Appearance</h3>
+    <hr>
     <div class="proper" onclick="document.getElementById('theme').click()">
       Theme
       <div class="right">
@@ -82,7 +83,7 @@
         </select>
       </div>
     </div>
-    <div class="proper" onclick="document.getElementById('theme').click()">
+    <div class="proper" onclick="document.getElementById('theme-color').click()">
       Colour
       <div class="right">
         <select name="theme" id="theme-color">
@@ -94,6 +95,47 @@
         </select>
       </div>
     </div>
+
+    <h3>Account</h3>
+    <hr>
+    <div class="proper" onclick="document.getElementById('theme').click()">
+      Name
+      <div class="right" onclick="if (localStorage.getItem('user')) {this.innerHTML = JSON.parse(localStorage.getItem('user')).name}">
+        <b>Click to show</b>
+      </div>
+    </div>
+    <div class="proper" onclick="document.getElementById('theme-color').click()">
+      Email
+      <div class="right" onclick="if (localStorage.getItem('user')) {this.innerHTML = JSON.parse(localStorage.getItem('user')).email}">
+        <b>Click to show</b>
+      </div>
+    </div>
+    <div class="proper" onclick="document.getElementById('theme-color').click()">
+      Account ID
+      <div class="right" onclick="if (localStorage.getItem('user')) {this.innerHTML = JSON.parse(localStorage.getItem('user')).id}">
+        <b>Click to show</b>
+      </div>
+    </div>
+    <div class="proper" onclick="document.getElementById('theme-color').click()">
+      Logged On
+      <div class="right" onclick="if (localStorage.getItem('user')) {this.innerHTML = JSON.parse(localStorage.getItem('user')).date.slice(0, 15)}">
+        <b>Click to show</b>
+      </div>
+    </div>
+
+    <h3>Download</h3>
+    <hr>
+    <div class="proper" onclick="document.getElementById('theme').click()">
+      Android
+      <div class="right">Coming soon</div>
+    </div>
+    <div class="proper" onclick="document.getElementById('theme-color').click()">
+      Windows or IOS
+      <div class="right">
+        Unavailable
+      </div>
+    </div>
+    
     
   </div>
 

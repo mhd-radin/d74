@@ -50,8 +50,13 @@
 - coolLoop bug fixes
 - formated methods in `explore.js`
 
-# 0K
+### 0K
 - `explore.js` bug fix 
 - at explore js: pasted data updated
 - limited ui cards in explore
 - styling bug fixes
+
+### 0L
+- sharable live streamings urls
+- styling bug fixes 
+- settings page updated

@@ -26,6 +26,7 @@
   width: 100%;
   border-radius: 9px;
   border: 2px solid var(--theme-color);
+  min-height: 35vh;
 }
 
 .list-channels {

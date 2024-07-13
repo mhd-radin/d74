@@ -26,7 +26,7 @@ db.getLiveAndHL(function(xhr = new XMLHttpRequest()) {
 
     coolLoop(rs.slice(0, 12), function(data, index) {
       var code = live_card_ui.create(data).parseElement()[0];
-      streams.appendChild(code);
+      div.appendChild(code);
     }, 0, 30).then(() => {
       div.appendChild(live_card_ui.createViewMoreCard().parseElement()[0])
 
@@ -41,14 +41,13 @@ db.getLiveAndHL(function(xhr = new XMLHttpRequest()) {
         })
       })
 
-
-      coolLoop(res, function(data, index) {
+      coolLoop(res.slice(15, 40).reverse(), function(data, index) {
         var code = live_card_ui.create(data).parseElement()[0];
 
         streams.appendChild(code);
       }, 0, 70).then(() => {
 
-        div.appendChild(live_card_ui.createViewMoreCard().parseElement()[0])
+        streams.appendChild(live_card_ui.createViewMoreCard().parseElement()[0])
       })
 
     })

@@ -49,3 +49,9 @@
 - row and column view in explore page
 - coolLoop bug fixes
 - formated methods in `explore.js`
+
+# 0K
+- `explore.js` bug fix 
+- at explore js: pasted data updated
+- limited ui cards in explore
+- styling bug fixes

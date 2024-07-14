@@ -67,3 +67,7 @@
 
 ### 0N
 - at search page, added helper tags ( trending searchs )
+
+### 0P 
+- blue colour theme colours updated
+- icons changed 

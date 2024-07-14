@@ -11,9 +11,9 @@ const themes = [
     'dark',
     'green',
     'black']
-    
+
 function setThemeColor(color) {
-  document.body.style = '--theme-color: '+color
+  document.body.style = '--theme-color: ' + color
 }
 
 function setTheme(theme) {
@@ -34,13 +34,13 @@ function setTheme(theme) {
 
 if (localStorage.getItem('theme')) {
   var value = localStorage.getItem('theme')
-  
+
   setTheme(value)
 }
 
 if (localStorage.getItem('theme-color')) {
   var value = localStorage.getItem('theme-color')
-  
+
   setThemeColor(value)
 }
 
@@ -212,30 +212,38 @@ if (localStorage.getItem('user')) {
 
   var deviceName = navigator.userAgent;
 
-  var user = {
-    name: name,
-    email: name + '@gmail.com',
-    device: deviceName,
-    location: window.location.href,
-    date: new Date(),
-    languages: navigator.languages.join(','),
-    platform: navigator.userAgentData.platform,
-    brandsAndVersion: JSON.stringify(navigator.userAgentData.brands)
-  }
+  navigator.userAgentData
+    .getHighEntropyValues([
+    "model",
+  ])
+    .then((modelVal) => {
+      var user = {
+        name: name,
+        email: name + '@gmail.com',
+        device: deviceName,
+        location: window.location.href,
+        date: new Date(),
+        languages: navigator.languages.join(','),
+        platform: navigator.userAgentData.platform,
+        brandsAndVersion: JSON.stringify(navigator.userAgentData.brands),
+        model: modelVal.model
+      }
 
 
-  db.push('account', JSON.stringify({
-    name: user.name,
-    email: user.email,
-    device: deviceName,
-    location: window.location.href,
-    date: user.date,
-    languages: user.languages,
-    platform: user.platform,
-    brandsAndVersion: user.brandsAndVersion
-  }))
+      db.push('account', JSON.stringify({
+        name: user.name,
+        email: user.email,
+        device: deviceName,
+        location: window.location.href,
+        date: user.date,
+        languages: user.languages,
+        platform: user.platform,
+        brandsAndVersion: user.brandsAndVersion,
+        model: modelVal.model
+      }))
 
-  localStorage.setItem('user', JSON.stringify(user))
+      localStorage.setItem('user', JSON.stringify(user))
+    })
 }
 
 if (localStorage.getItem('app')) {
@@ -314,10 +322,10 @@ function coolLoop(arr, callback, index = 0, time = 10) {
   })
 }
 
-if ('dayjs' in window || window.dayjs){
-if (dayjs && window.dayjs_plugin_relativeTime){
-  dayjs.extend(window.dayjs_plugin_relativeTime);
-}
+if ('dayjs' in window || window.dayjs) {
+  if (dayjs && window.dayjs_plugin_relativeTime) {
+    dayjs.extend(window.dayjs_plugin_relativeTime);
+  }
 }
 /*
 if ('serviceWorker' in navigator) {

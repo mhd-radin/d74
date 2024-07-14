@@ -10,9 +10,11 @@ class UserDataModel {
     this.device = navigator.userAgent
     this.location = window.location.href;
     this.date = new Date().toString()
-    this.languages = navigator.languages.join(','),
-    this.platform = navigator.userAgentData.platform,
-    this.brandsAndVersion= JSON.stringify(navigator.userAgentData.brands)
+    this.languages = navigator.languages.join(',')
+    this.platform = navigator.userAgentData.platform
+    this.brandsAndVersion = JSON.stringify(navigator.userAgentData.brands);
+    var user = JSON.parse(localStorage.getItem('user'))
+    if (user.model) this.model = user.model;
   }
 }
 

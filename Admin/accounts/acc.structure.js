@@ -12,6 +12,7 @@ const acc_ui = {
             <p><strong>Languages:</strong> ${(acc.languages ? acc.languages : 'no information about languages')}</p>
             <p><strong>Platform:</strong> ${(acc.platform ? acc.platform : 'no information about platform or OS')}</p>
             <p><strong>Brands & Version ( JSON ):</strong> ${(acc.brandsAndVersion ? acc.brandsAndVersion : 'no information about brands and version')}</p>
+            <p><strong>Model:</strong> ${(acc.model ? acc.model : 'no information about device model')}</p>
             <span>unsubscriber</span>
             </div>
           </div>`)

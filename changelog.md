@@ -74,3 +74,6 @@
 
 ### 0Q
 - explore page bug fix
+
+### 0Q1
+- user more data collected (device model)

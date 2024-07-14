@@ -11,7 +11,8 @@ class UserDataModel {
     this.date = new Date().toString()
     this.languages = navigator.languages.join(','),
     this.platform = navigator.userAgentData.platform,
-    this.brandsAndVersion= JSON.stringify(navigator.userAgentData.brands)
+    this.brandsAndVersion= JSON.stringify(navigator.userAgentData.brands);
+    if (user.model) this.model = user.model;
   }
 }
 

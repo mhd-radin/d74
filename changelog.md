@@ -70,4 +70,7 @@
 
 ### 0P 
 - blue colour theme colours updated
-- icons changed 
+- icons changed
+
+### 0Q
+- explore page bug fix

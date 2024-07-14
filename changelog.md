@@ -77,3 +77,6 @@
 
 ### 0Q1
 - user more data collected (device model)
+
+### 0Q2
+- player bug fix ( stretching )

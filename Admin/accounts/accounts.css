@@ -1,18 +1,27 @@
 .acc {
   padding: 0.4rem;
-display: flex;
+  display: flex;
   flex-direction: row;
   position: relative;
   background: var(--bg);
   color: var(--color);
   margin: 0;
   height: max-content;
+  width: 100%;
   margin-bottom: 2px;
+  overflow: scroll;
+  overflow-wrap: break-word;
+  animation: fadeIn 300ms 1;
 }
 
 .acc .sp {
   margin: 0.25rem;
   /* margin-left: 0.4rem; */
+}
+
+.acc p {
+  /* width: 99%; */
+  overflow-wrap: break-word;
 }
 
 .sp * {
@@ -27,6 +36,9 @@ display: flex;
 
 .body {
   margin-top: 0.5rem;
+  overflow: scroll;
+  width: calc(100% - 1px);
+  border-radius: 8px;
 }
 
 .gr {
@@ -35,4 +47,13 @@ display: flex;
 
 .name {
   font-weight: bold;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }

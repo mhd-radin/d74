@@ -80,3 +80,6 @@
 
 ### 0Q2
 - player bug fix ( stretching )
+
+### 0R
+- accounts ui bug fixes and animation

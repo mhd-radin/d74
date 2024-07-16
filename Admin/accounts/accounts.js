@@ -5,7 +5,8 @@ db.get('account', function(xhr) {
   
   document.querySelector('.body').innerHTML += acc_ui.createTitleBar(xhr)
 
-  JSON.parse(xhr.response).forEach(function(acc) {
-    document.querySelector('.body').innerHTML += acc_ui.create(acc)
-  })
+  var parsedData = JSON.parse(xhr.response)
+  coolLoop(parsedData, function(acc) {
+    document.querySelector('.body').appendChild(acc_ui.create(acc).parseElement()[0])
+  }, 0, 90)
 })

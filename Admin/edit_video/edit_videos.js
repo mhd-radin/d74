@@ -15,7 +15,7 @@ if (params == '') {
 
   } else {
     var ytId = objectParams.id
-    var q = 'videos?q=' + decodeURI(JSON.stringify({ ytid: ytId }))
+    var q = new db.Coll('videos', { ytid: ytId })
 
     db.get(q, function(xhr = new XMLHttpRequest()) {
       var res = JSON.parse(xhr.response)[0]

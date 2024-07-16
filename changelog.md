@@ -83,3 +83,7 @@
 
 ### 0R
 - accounts ui bug fixes and animation
+
+### 0S
+- using firestore for db
+- multiserver app

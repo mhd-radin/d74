@@ -46,6 +46,7 @@ if (params == '') {
             url: 'https://youtube.com/watch?v=' + ytId,
             title: snippet.title,
           }), function (xhr2 = new XMLHttpRequest()){
+            console.log(xhr2)
             if (xhr2.status != 201) {
               sub.innerHTML = 'Server Upload Failed '+xhr2.status
             } else {

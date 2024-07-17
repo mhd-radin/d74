@@ -14,7 +14,7 @@ if (params == '') {
     const data = null;
     const xhr = new XMLHttpRequest();
 
-    var q = 'videos?q=' + decodeURI(JSON.stringify({ ytid: objectParams.id }))
+    var q = new db.Coll('videos', { ytid: objectParams.id })
 
     document.getElementById('dl').style.display = 'none'
 

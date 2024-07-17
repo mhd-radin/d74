@@ -2,7 +2,7 @@ var bodyData = document.querySelector('.body').innerHTML;
 
 function searchVideos(search = false, inScript = function() {}) {
   document.querySelector('.loader-bg').style.display = 'block'
-  db.get('videos?h=' + decodeURI(JSON.stringify({})), function(xhr = new XMLHttpRequest()) {
+  db.get(new db.Coll('videos', {}), function(xhr = new XMLHttpRequest()) {
     var res = JSON.parse(xhr.response)
 
 
@@ -16,11 +16,13 @@ function searchVideos(search = false, inScript = function() {}) {
     }
 
     function srchVd(value) {
-      document.querySelector('.body').innerHTML = ''
+      document.querySelector('.body').innerHTML = '';
       res.forEach(function(data, index) {
-        if (
+        data.title = new String(data.title);
+        data.description = new String(data.description);
+        if ( data.title && value &&
           data.title.toLocaleLowerCase().includes(value.toLocaleLowerCase()) 
-          || data.description.toLocaleLowerCase().includes(value.toLocaleLowerCase())) {
+          || data.description && value && data.description.toLocaleLowerCase().includes(value.toLocaleLowerCase())) {
             
           var id = 'ID_10' + index
           var code = search_page_card.create(data, id)
@@ -45,7 +47,7 @@ function searchVideos(search = false, inScript = function() {}) {
         srchVd(document.getElementById('searcher').value)
       }
     }
-  })
+  }, 0)
 }
 
 function openOptions(id) {

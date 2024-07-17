@@ -87,3 +87,6 @@
 ### 0S
 - using firestore for db
 - multiserver app
+
+### 0T
+- `d74.js` FBDB bug fixes

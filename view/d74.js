@@ -5,20 +5,20 @@ const db = {
       this.collection = collection;
       this.queryObj = queryObj;
     }
-  hasQuery(){
-    return (this.queryObj && Object.keys(this.queryObj).length > 0);
-  }
+    hasQuery() {
+      return (this.queryObj && Object.keys(this.queryObj).length > 0);
+    }
 
     toQURL() {
-      var str = '' + this.collection;
+      var str = this.collection;
       if (this.hasQuery()) {
         str += ('?q=' + decodeURI(JSON.stringify(this.queryObj)));
       }
       return str;
     }
 
-    QforFB(operator = '==') {
-      var x = Object.keys(this.queryObj)[0]
+    QforFB(operator = '==', i = 0) {
+      var x = Object.keys(this.queryObj)[i]
       var y = operator;
       var z = this.queryObj[x];
       return [x, y, z];
@@ -63,15 +63,90 @@ if (db && db.sdk){
           resolve()
         }, 2000)
         //}
+      } else {
+        resolve()
       }
     })
   },
-  async apiToggler(status, as1, as2) {
-    var asr1 = await as1();
-    if (asr1 != status) {
-      await as2();
+
+  getFDBDocByQueries(col) {
+    return new Promise((resolve, reject) => {
+      if (col && col.collection) {
+        const returnData = [];
+
+        function requestForDoc(collection) {
+          return new Promise((res, rej) => {
+            db.sdk.getDocs(collection).then((snapshot) => {
+              var status = 200;
+              var data = [];
+
+              snapshot.forEach(function(e) {
+                var dt = e.data();
+                dt._id = e.id;
+                data.push(dt);
+              });
+
+              if (data.length == 0) {
+                status = 100;
+                rej(status)
+              }
+
+              res(data)
+            }).catch((err) => {
+              rej(404)
+            })
+          })
+        }
+
+        var collection = db.sdk.collection(db.fdb, col.collection);
+        if (col.hasQuery()) {
+          var obj = col.queryObj;
+          var keys = Object.keys(obj);
+          var whs = []
+
+          keys.forEach(function(key, index) {
+            let qfb = col.QforFB('==', index);
+            let where = db.sdk.where(qfb[0], qfb[1], qfb[2]);
+            whs.push(where)
+          })
+          
+          requestForDoc(db.sdk.query(collection, ...whs)).then(function(data) {
+            returnData.push(data);
+            if ((keys.length - 1) == index) {
+              resolve(data);
+            }
+          }).catch(err => reject(err))
+        } else {
+          requestForDoc(collection).then((data) => {
+            resolve(data)
+          }).catch(err => reject(err))
+        }
+      }
+    })
+  },
+  async apiToggler(status, as1, as2, typeCode = 0) {
+    switch (typeCode) {
+      case 0:
+
+        as1().then(function(status) {
+          console.log('as1 getted..', status)
+        }).catch(function() {
+          console.log('catched...')
+          as2()
+        })
+        break;
+      case 1:
+        as1();
+        break;
+      case 2:
+        as2();
+        break;
+      case 3:
+        as1().then(() => {
+          as2()
+        })
+        break;
     }
-    return true;
   },
   push(collection, data = {}, onfinish = function() {}) {
     if (!collection instanceof db.Coll || !collection.collection) collection = new db.Coll(collection);
@@ -79,12 +154,12 @@ if (db && db.sdk){
       this.apiToggler(201, function() {
         return new Promise((resolve, reject) => {
           db.sdk.setDoc(db.sdk.doc(db.fdb, collection.collection, ('FBD_Atqva7qb' + Math.floor(Math.random() * 999) + 'Fayqb' + Math.floor(Math.random() * 999999))), JSON.parse(data)).then(() => {
-            resolve(201)
             onfinish({
               status: 201
             })
+            resolve(201)
             console.log('dt')
-          }).catch((err) => reject(404))
+          }).catch((err) => { reject(404) })
         })
       }, function() {
         return new Promise((resolve, reject) => {
@@ -98,7 +173,7 @@ if (db && db.sdk){
             }
           });
 
-          xhr.open("POST", "https://d74edits-fce6.restdb.io/rest/" + collection);
+          xhr.open("POST", "https://d74edits-fce6.restdb.io/rest/" + collection.toQURL());
           xhr.setRequestHeader("content-type", "application/json");
           xhr.setRequestHeader("x-apikey", this.qC4dK);
           xhr.setRequestHeader("cache-control", "no-cache");
@@ -109,69 +184,83 @@ if (db && db.sdk){
     })
   },
   put(collection, data = {}, onfinish = function() {}) {
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-
-    xhr.addEventListener("readystatechange", function() {
-      if (this.readyState === 4) {
-        onfinish(this)
-      }
-    });
-
-    xhr.open("PUT", "https://d74edits-fce6.restdb.io/rest/" + collection);
-    xhr.setRequestHeader("content-type", "application/json");
-    xhr.setRequestHeader("x-apikey", this.qC4dK);
-    xhr.setRequestHeader("cache-control", "no-cache");
-
-    xhr.send(data);
-
-    return xhr
-  },
-  get(collection, finish) {
     if (!collection instanceof db.Coll || !collection.collection) collection = new db.Coll(collection);
     this.config().then(() => {
       this.apiToggler(200, function() {
         return new Promise((resolve, reject) => {
-          var col = db.sdk.collection(db.fdb, collection.collection);
-          if (collection.hasQuery()) {
-            var qfb = collection.QforFB('==');
-            col = db.sdk.query(col, db.sdk.where(qfb[0], qfb[1],qfb[2]))
-          }
-          db.sdk.getDocs(col).then((snapshot) => {
-            resolve(200)
-            var data = [];
-            snapshot.forEach(function(e) {
-              var dt = e.data();
-              dt._id = e.id;
-              data.push(dt);
-            });
-
-            finish({
-              status: 200,
-              response: JSON.stringify(data)
+          db.sdk.setDoc(db.sdk.doc(db.fdb, collection.collection), JSON.parse(data)).then(() => {
+            onfinish({
+              status: 200
             })
-            console.log('dt5')
+            resolve(200)
+            console.log('dtPut')
           }).catch((err) => reject(404))
         })
       }, function() {
-        var data = null;
+        return new Promise((resolve, reject) => {
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
 
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = false;
+          xhr.addEventListener("readystatechange", function() {
+            if (this.readyState === 4) {
+              onfinish(this)
+              resolve(this)
+            }
+          });
 
-        xhr.addEventListener("readystatechange", function() {
-          if (this.readyState === 4) {
-            finish(xhr)
-          }
-        });
+          xhr.open("PUT", "https://d74edits-fce6.restdb.io/rest/" + collection.toQURL());
+          xhr.setRequestHeader("content-type", "application/json");
+          xhr.setRequestHeader("x-apikey", this.qC4dK);
+          xhr.setRequestHeader("cache-control", "no-cache");
 
-        xhr.open("GET", "https://d74edits-fce6.restdb.io/rest/" + collection);
-        xhr.setRequestHeader("content-type", "application/json");
-        xhr.setRequestHeader("x-apikey", this.qC4dK);
-        xhr.setRequestHeader("cache-control", "no-cache");
-
-        xhr.send(data);
+          xhr.send(data);
+        })
       })
+    })
+  },
+  get(collection, finish, typeCode = 0) {
+    console.log('getting collection', collection)
+    if (!collection instanceof db.Coll || !collection.collection) collection = new db.Coll(collection);
+    this.config().then(() => {
+      this.apiToggler(200, function() {
+          return new Promise((resolve, reject) => {
+            var status = 200;
+            db.getFDBDocByQueries(collection).then((data) => {
+
+              finish({
+                status: status,
+                response: JSON.stringify(data)
+              })
+              console.log('dt5')
+            }).catch(err=> reject(404));
+          })
+
+        },
+        function() {
+          console.log(collection.toQURL());
+
+          var data = null;
+
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+
+          xhr.addEventListener("readystatechange", function() {
+            if (this.readyState === 4) {
+              console.log('Done Request')
+              console.log(xhr.status)
+              if (xhr.status == 0) { alert('error') }
+              finish(xhr)
+            }
+          });
+
+          xhr.open("GET", "https://d74edits-fce6.restdb.io/rest/" + collection.toQURL());
+          xhr.setRequestHeader("content-type", "application/json");
+          xhr.setRequestHeader("x-apikey", db.qC4dK);
+          xhr.setRequestHeader("cache-control", "no-cache");
+
+          xhr.send(data);
+        },
+        typeCode)
     })
   },
   getYTchannelVideos(onfinish, pageTkn = false) {

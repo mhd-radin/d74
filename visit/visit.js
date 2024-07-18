@@ -31,7 +31,7 @@ if (params == '') {
 
       document.getElementById('submit').addEventListener('click', function() {
         document.getElementById('submit').innerHTML = '<div class="loader-sml hide"></div><div class="load"><div class="loader-sml"></div></div>'
-
+        console.log(res)
         if (document.getElementById('password').value == res.pw) {
           document.querySelector('.block-div').style.display = 'none'
           document.querySelector('.form-center').style.display = 'none'
@@ -55,7 +55,7 @@ if (params == '') {
         } else {
           alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube", function() {
             document.getElementById('submit').innerHTML = 'Submit'
-            window.location.reload()
+            //window.location.reload()
           })
         }
       })

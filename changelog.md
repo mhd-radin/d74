@@ -90,3 +90,6 @@
 
 ### 0T
 - `d74.js` FBDB bug fixes
+
+### 0U 
+- d74 server client bug fix

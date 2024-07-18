@@ -88,11 +88,13 @@ if (db && db.sdk){
 
               if (data.length == 0) {
                 status = 100;
+                console.log('status 100...')
                 rej(status)
               }
 
               res(data)
             }).catch((err) => {
+              console.warn()
               rej(404)
             })
           })
@@ -105,16 +107,19 @@ if (db && db.sdk){
           var whs = []
 
           keys.forEach(function(key, index) {
-            let qfb = col.QforFB('==', index);
-            let where = db.sdk.where(qfb[0], qfb[1], qfb[2]);
+            let where = db.sdk.where(key, '==', obj[key]);
             whs.push(where)
           })
-          
+
+          console.log("whs", whs)
+
           requestForDoc(db.sdk.query(collection, ...whs)).then(function(data) {
+            console.log('the data', data);
             returnData.push(data);
-            if ((keys.length - 1) == index) {
-              resolve(data);
-            }
+            //if ((keys.length - 1) == index) {
+            resolve([returnData[0]]);
+            console.log('RTD', returnData)
+            //}
           }).catch(err => reject(err))
         } else {
           requestForDoc(collection).then((data) => {
@@ -219,20 +224,21 @@ if (db && db.sdk){
     })
   },
   get(collection, finish, typeCode = 0) {
-    console.log('getting collection', collection)
     if (!collection instanceof db.Coll || !collection.collection) collection = new db.Coll(collection);
     this.config().then(() => {
       this.apiToggler(200, function() {
           return new Promise((resolve, reject) => {
             var status = 200;
             db.getFDBDocByQueries(collection).then((data) => {
+              console.log('getting collection', data)
 
               finish({
                 status: status,
                 response: JSON.stringify(data)
               })
               console.log('dt5')
-            }).catch(err=> reject(404));
+            }).catch(err => { console.log(err);
+              reject(404) });
           })
 
         },

@@ -1,6 +1,6 @@
 @import url("color.css");
 @import url("alert.css");
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
   margin: 0;
@@ -8,7 +8,12 @@ body {
   min-width: 100%;
   min-height: 100vh;
   color: var(--color);
-  background-color: var(--sec-bg)
+  background-color: var(--sec-bg);
+}
+
+.body {
+  width: 100%;
+  position: relative;
 }
 
 ::-webkit-scrollbar {
@@ -29,7 +34,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 2000px 1000px #33333350
+  box-shadow: 0 0 2000px 1000px #33333350;
 }
 
 .loader {
@@ -42,13 +47,13 @@ body {
 }
 
 ion-icon {
-  font-size: 23px
+  font-size: 23px;
 }
 
 .load-center {
   position: absolute;
   left: 50%;
-  transform: translate(-50%)
+  transform: translate(-50%);
 }
 
 .load-btn {
@@ -61,7 +66,6 @@ ion-icon {
   border-radius: 8px;
   width: 90%;
   /*height: 36px*/
-  ;
 }
 
 .block-div {
@@ -74,7 +78,6 @@ ion-icon {
   left: 0;
   display: none;
 }
-
 
 .bg-ogrey {
   background: #33333350;
@@ -115,12 +118,12 @@ p {
 
 a {
   text-decoration: none;
-  color: var(--theme-color)
+  color: var(--theme-color);
 }
 
 .loadtitle {
   margin: 1rem 0.7rem;
-  font-size: 13px
+  font-size: 13px;
 }
 
 .active {
@@ -150,14 +153,12 @@ a {
   z-index: 99;
 }
 
-
 .menu-icon {
   color: var(--color);
   margin: 0.5rem;
   padding-right: 0.9rem;
   padding-left: 0.9rem;
 }
-
 
 nav {
   color: var(--color);
@@ -172,18 +173,19 @@ nav {
   flex-direction: row;
   background: var(--bg);
   opacity: 80%;
-  backdrop-filter: blur(2px)
+  backdrop-filter: blur(2px);
 }
 
 nav .title {
   font-size: 26px;
-  display: flex;flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 nav b {
   font-size: 13px;
   font-weight: 700;
-  color: var(--sec-color)
+  color: var(--sec-color);
 }
 
 .right-icons ion-icon {
@@ -217,7 +219,8 @@ nav b {
 }
 
 .link p {
-  margin: 0;padding: 0;
+  margin: 0;
+  padding: 0;
   margin-left: 15px;
   line-height: 20px;
 }
@@ -227,14 +230,16 @@ nav b {
 }
 
 .link .small {
-  margin: 0;padding: 0;
+  margin: 0;
+  padding: 0;
   margin-left: 15px;
   font-size: 10px;
   color: var(--sec-color);
 }
 
-.link:hover, .relink:hover {
-  color: var(--theme-color)
+.link:hover,
+.relink:hover {
+  color: var(--theme-color);
 }
 
 .left-box {
@@ -275,11 +280,11 @@ nav b {
 
 @keyframes showInLeft {
   0% {
-    transform: translate(-120%)
+    transform: translate(-120%);
   }
 
   100% {
-    transform: translate(0%)
+    transform: translate(0%);
   }
 }
 
@@ -295,7 +300,7 @@ nav b {
 
 @media screen and (min-width: 600px) {
   .left-bar {
-    width: 400px
+    width: 400px;
   }
 
   .load-btn {
@@ -311,23 +316,25 @@ nav b {
     height: 70px;
     overflow: hidden;
   }
-  
-  .body, nav {
+
+  .body,
+  nav {
     padding-left: 3.8rem;
   }
-  
+
   nav {
     width: 98vw;
     width: webkit-fill-available !important;
   }
-  
+
   .left-bar {
     height: 99vh;
     height: webkit-fill-available !important;
   }
-  
+
   .menu {
-    display: flex;flex-direction: column;
+    display: flex;
+    flex-direction: column;
     top: 0;
     left: 0 !important;
     width: 35px;
@@ -335,18 +342,18 @@ nav b {
     box-shadow: none;
     position: fixed;
     border-radius: 0;
-    transform: translate(0,0);
+    transform: translate(0, 0);
     margin: 0;
     justify-content: flex-start;
     align-items: center;
-    z-index: 9
+    z-index: 9;
   }
-  
+
   .menu-icon {
     margin-top: 2rem;
   }
-  
-  .menu-icon:nth-child(1){
+
+  .menu-icon:nth-child(1) {
     margin-top: 5rem;
   }
 }
@@ -361,7 +368,7 @@ button {
 }
 
 ion-icon:hover {
-  color: var(--theme-color)
+  color: var(--theme-color);
 }
 
 .form-center {

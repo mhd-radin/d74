@@ -129,16 +129,16 @@ body {
 
 @keyframes showInLeft {
   0% {
-    transform: translate(-120%)
+    transform: translate(-120%);
   }
 
   100% {
-    transform: translate(0%)
+    transform: translate(0%);
   }
 }
 
 .loader-bg {
-  box-shadow: 0 0 2000px 1000px #ffffff50
+  box-shadow: 0 0 2000px 1000px #ffffff50;
 }
 
 @media screen and (min-width: 600px) {
@@ -160,7 +160,7 @@ body {
 
 .google-text {
   position: fixed;
-  opacity: 0
+  opacity: 0;
 }
 
 .card-board-root {
@@ -202,7 +202,6 @@ body {
   width: (100% - 5px) !important;
 }
 
-
 .tv-box {
   padding: 8px;
   margin: 4px;
@@ -211,7 +210,8 @@ body {
   text-align: center;
   font-size: 13.7px;
   font-family: "Rubik", "Alegreya Sans SC", sans-serif;
-  display: flex;flex-direction: column;
+  display: flex;
+  flex-direction: column;
   min-width: 100px;
   max-width: 130px;
 }

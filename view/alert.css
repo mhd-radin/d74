@@ -13,18 +13,18 @@
   animation: startfrombottom 0.2s 1;
 }
 
-@keyframes startfrombottom{
+@keyframes startfrombottom {
   0% {
     transform: translate(-50%, -50%) scale(0.4);
   }
-  
+
   100% {
-    transform: translate(-50%, -50%) scale(1)
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
 .alert-head {
- font-weight: bold;
+  font-weight: bold;
   font-size: 14px;
   margin: 0.2rem;
   margin-bottom: 0.2rem;

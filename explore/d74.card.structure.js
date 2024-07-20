@@ -10,28 +10,30 @@ const d74_structure = {
     </div>
     <div class="card-grad"></div>
     <div class="card-title card-title-bottom">${snippet.title}</div>
-    <div class="card-opt-icon" onclick="openOptions('${id+" 2"}')">
+    <div class="card-opt-icon" onclick="openOptions('${id + " 2"}')">
       <ion-icon name="ellipsis-horizontal"></ion-icon>
     </div>
-    <div class="card-options" id="${id+" 2"}">
+    <div class="card-options" id="${id + " 2"}">
       <div class="card-head">
         Options
       </div>
       <div class="card-body">
-        <p class="card-opt" onclick="redirctTo('../visit/?id=${data.id.videoId}')">
+        <p class="card-opt" onclick="redirctTo('../visit/?id=${
+          data.id.videoId
+        }')">
           View
         </p>
         <p class="card-opt">
           Save
         </p>
-        <p class="card-opt" onclick="closeOptions('${id+'2'}')">
+        <p class="card-opt" onclick="closeOptions('${id + "2"}')">
           Close
         </p>
       </div>
     </div>
   </a>
 </div>
-`)
+`);
     return code;
-  }
-}
+  },
+};

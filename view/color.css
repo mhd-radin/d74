@@ -1,44 +1,41 @@
 :root,
 .light {
   --color: #111;
-  --blue: #5A78CB;
-  --theme-color: #5985D5;
+  --blue: #5a78cb;
+  --theme-color: #5985d5;
   --bg: #fff;
   --sec-color: #333;
   --inverted-color: #fff;
   --white: #fff;
   --black: #000;
-  --sec-bg: #EEE;
+  --sec-bg: #eee;
 }
-
 
 .blue {
   --color: #fff;
-  --blue: #5A78CB;
+  --blue: #5a78cb;
   --bg: #001f2b;
   --sec-color: #eee;
   --inverted-color: #111;
   --white: #fff;
   --black: #000;
-  --sec-bg: #00415A;
+  --sec-bg: #00415a;
 }
-
 
 .dark {
   --color: #fff;
-  --blue: #5A78CB;
+  --blue: #5a78cb;
   --bg: #222;
   --sec-color: #eee;
   --inverted-color: #111;
   --white: #fff;
   --black: #000;
-  --sec-bg: #2B2B2B;
+  --sec-bg: #2b2b2b;
 }
-
 
 .black {
   --color: #fff;
-  --blue: #5A78CB;
+  --blue: #5a78cb;
   --bg: #222;
   --sec-color: #eee;
   --inverted-color: #111;
@@ -47,14 +44,13 @@
   --sec-bg: #000;
 }
 
-
 .green {
   --color: #fff;
-  --blue: #5A78CB;
-  --bg: #3C815B;
+  --blue: #5a78cb;
+  --bg: #3c815b;
   --sec-color: #eee;
   --inverted-color: #111;
   --white: #fff;
   --black: #000;
-  --sec-bg: #559E75;
+  --sec-bg: #559e75;
 }

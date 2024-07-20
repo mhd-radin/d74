@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 .live-board-root {
   padding: 5px;
@@ -99,7 +99,6 @@
   color: var(--theme-color);
 }
 
-
 .team-card .match-opt .right-icons {
   top: 4px;
 }
@@ -109,8 +108,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(https://media.api-sports.io/football/venues/556.png) center center;
-  backdrop-filter: blur(2px)
+  background: url(https://media.api-sports.io/football/venues/556.png) center
+    center;
+  backdrop-filter: blur(2px);
 }
 
 .more-view-card {
@@ -120,7 +120,8 @@
   border-radius: 9px;
 }
 
-.live-board-title, .card-board-title {
+.live-board-title,
+.card-board-title {
   font-family: "Alegreya Sans SC", "Rubik", "Poppins", sans-serif;
-  font-weight: bolder
+  font-weight: bolder;
 }

@@ -222,17 +222,12 @@ if (localStorage.getItem("user")) {
 
   var deviceName = navigator.userAgent;
 
-  navigator.userAgentData.getHighEntropyValues(["model"]).then((modelVal) => {
-    var user = {
+      var user = {
       name: name,
       email: name + "@gmail.com",
-      device: deviceName,
       location: window.location.href,
       date: new Date(),
       languages: navigator.languages.join(","),
-      platform: navigator.userAgentData.platform,
-      brandsAndVersion: JSON.stringify(navigator.userAgentData.brands),
-      model: modelVal.model,
     };
 
     db.push(
@@ -240,18 +235,13 @@ if (localStorage.getItem("user")) {
       JSON.stringify({
         name: user.name,
         email: user.email,
-        device: deviceName,
         location: window.location.href,
         date: user.date,
         languages: user.languages,
-        platform: user.platform,
-        brandsAndVersion: user.brandsAndVersion,
-        model: modelVal.model,
       })
     );
 
     localStorage.setItem("user", JSON.stringify(user));
-  });
 }
 
 if (localStorage.getItem("app")) {

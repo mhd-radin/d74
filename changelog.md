@@ -93,3 +93,7 @@
 
 ### 0U 
 - d74 server client bug fix
+
+### 0V 
+- formated with prettier
+- removed over data collecting from user

@@ -6,13 +6,13 @@ class UserDataModel {
     this.email = email
     this.id = id
     this.data = data
-    this.device = navigator.userAgent
+    // this.device = navigator.userAgent
     this.location = window.location.href;
     this.date = new Date().toString()
-    this.languages = navigator.languages.join(','),
-    this.platform = navigator.userAgentData.platform,
-    this.brandsAndVersion= JSON.stringify(navigator.userAgentData.brands);
-    if (user.model) this.model = user.model;
+    // this.languages = navigator.languages.join(','),
+    // this.platform = navigator.userAgentData.platform,
+    // this.brandsAndVersion= JSON.stringify(navigator.userAgentData.brands);
+    // if (user.model) this.model = user.model;
   }
 }
 

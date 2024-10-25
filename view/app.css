@@ -16,6 +16,7 @@ body {
   position: relative;
 }
 
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -403,3 +404,4 @@ input:disabled {
   color: var(--color);
   padding: 4px;
 }
+

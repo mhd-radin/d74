@@ -318,6 +318,13 @@ button {
 
   nav {
     padding-left: 0.5rem;
+    width: calc(100% - 0.7rem);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .body {
+    width: calc(100% - 140px) !important;
   }
 }
 

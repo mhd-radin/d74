@@ -80,3 +80,10 @@
     opacity: 1;
   }
 }
+
+@media screen and (min-width: 600px) {
+  .player-box iframe {
+    min-height: 450px;
+    width: 70%;
+  }
+}
